@@ -1,6 +1,8 @@
-class GeocodingService 
-  def self.connection 
-    Faraday.new(url: "http://www.mapquestapi.com/") do |faraday|
+# frozen_string_literal: true
+
+class GeocodingService
+  def self.connection
+    Faraday.new(url: 'http://www.mapquestapi.com/') do |faraday|
       faraday.params['key'] = ENV['geo_key']
     end
   end

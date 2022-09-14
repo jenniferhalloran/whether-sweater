@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-
 RSpec.describe WeatherService do
-  describe "#get_weather(latitude, longitude)" do
+  describe '#get_weather(latitude, longitude)' do
     it 'returns the daily, weekly, and hourly weather for the given location' do
       weather_data = WeatherService.get_weather(39.738453, -104.984853)
 
@@ -21,7 +22,7 @@ RSpec.describe WeatherService do
       expect(weather_data[:current][:weather][0]).to be_a Hash
       expect(weather_data[:current][:weather][0][:description]).to be_a String
       expect(weather_data[:current][:weather][0][:icon]).to be_a String
-  
+
       expect(weather_data[:daily]).to be_an Array
       expect(weather_data[:daily][0][:dt]).to be_an Integer
       expect(weather_data[:daily][0][:sunrise]).to be_an Integer
@@ -33,7 +34,7 @@ RSpec.describe WeatherService do
       expect(weather_data[:daily][0][:weather][0]).to be_a Hash
       expect(weather_data[:daily][0][:weather][0][:description]).to be_a String
       expect(weather_data[:daily][0][:weather][0][:icon]).to be_a String
-  
+
       expect(weather_data[:hourly]).to be_an Array
       expect(weather_data[:hourly][0][:dt]).to be_an Integer
       expect(weather_data[:hourly][0][:temp]).to be_an Float
