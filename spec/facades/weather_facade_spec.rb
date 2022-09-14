@@ -1,7 +1,9 @@
-require "rails_helper"
+# frozen_string_literal: true
+
+require 'rails_helper'
 
 RSpec.describe WeatherFacade do
-  describe "#get_weather(latitude,longitude)", :vcr do
+  describe '#get_weather(latitude,longitude)', :vcr do
     it 'returns the daily, current, and hourly weather for a location as objects' do
       weather = WeatherFacade.get_weather(39.738453, -104.984853)
       expect(weather[:current_weather]).to be_a(CurrentWeather)

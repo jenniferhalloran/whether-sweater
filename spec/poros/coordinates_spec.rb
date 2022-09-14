@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe Coordinates do 
+RSpec.describe Coordinates do
   it 'exists and has readable attributes' do
     geodata = JSON.parse(File.read('./spec/fixtures/geodata.json'), symbolize_names: true)[:results][0][:locations][0]
 

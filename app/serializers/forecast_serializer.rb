@@ -1,9 +1,11 @@
-class ForecastSerializer 
+# frozen_string_literal: true
+
+class ForecastSerializer
   def self.format_forecast(weather)
     {
       "data": {
         "id": nil,
-        "type": "forecast",
+        "type": 'forecast',
         "attributes": {
           "current_weather": {
             "datetime": weather[:current_weather].datetime,
@@ -15,7 +17,7 @@ class ForecastSerializer
             "uvi": weather[:current_weather].uvi,
             "visibility": weather[:current_weather].visibility,
             "conditions": weather[:current_weather].conditions,
-            "icon": weather[:current_weather].icon,
+            "icon": weather[:current_weather].icon
           },
           "daily_weather": weather[:daily_weather].map do |daily_weather|
             {

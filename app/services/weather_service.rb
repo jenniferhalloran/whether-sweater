@@ -1,6 +1,8 @@
-class WeatherService 
+# frozen_string_literal: true
+
+class WeatherService
   def self.connection
-    Faraday.new(url: "https://api.openweathermap.org/") do |faraday|
+    Faraday.new(url: 'https://api.openweathermap.org/') do |faraday|
       faraday.params['appid'] = ENV['weather_key']
     end
   end

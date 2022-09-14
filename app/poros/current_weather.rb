@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 class CurrentWeather
-  attr_reader :datetime, 
-              :sunrise, 
-              :sunset, 
-              :temperature, 
-              :feels_like, 
-              :humidity, 
-              :uvi, 
-              :visibility, 
-              :conditions, 
+  attr_reader :datetime,
+              :sunrise,
+              :sunset,
+              :temperature,
+              :feels_like,
+              :humidity,
+              :uvi,
+              :visibility,
+              :conditions,
               :icon
 
   def initialize(current_data)

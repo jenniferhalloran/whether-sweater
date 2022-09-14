@@ -1,4 +1,6 @@
-class Coordinates 
+# frozen_string_literal: true
+
+class Coordinates
   attr_reader :latitude, :longitude
 
   def initialize(geodata)
