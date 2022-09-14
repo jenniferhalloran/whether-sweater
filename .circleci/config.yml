@@ -4,22 +4,22 @@ orbs:
 
 jobs:
   build:
-    working_directory: ~/whether_sweater
+    working_directory: ~/whether-sweater
     docker:
       - image: circleci/ruby:2.7.4
         environment:
           PGHOST: localhost
-          PGUSER: whether_sweater
+          PGUSER: whether-sweater
           RAILS_ENV: test
       - image: postgres:13.2
         environment:
-          POSTGRES_USER: whether_sweater
-          POSTGRES_DB: whether_sweater_test
+          POSTGRES_USER: whether-sweater
+          POSTGRES_DB: whether-sweater_test
           POSTGRES_PASSWORD:
     steps:
       - checkout
       - run:
-          name: whether_sweater
+          name: whether-sweater
           command: bundle -v
       - ruby/bundle-install
 
