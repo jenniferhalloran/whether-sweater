@@ -61,4 +61,19 @@ RSpec.describe 'Forecast API' do
       end
     end
   end
+
+
+  describe 'sad path' do
+    it 'returns an error if there are no params sent through' do
+      get '/api/v1/forecast'
+
+      expect(response.status).to eq 400
+      
+      get '/api/v1/forecast?location=  '
+      body = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response.status).to eq 400
+      expect(body[:error]).to eq("Invalid search, please try again.")
+    end
+  end
 end
