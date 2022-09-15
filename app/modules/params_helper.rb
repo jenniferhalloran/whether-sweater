@@ -8,4 +8,8 @@ module ParamsHelper
     params.permit(:email, :password, :password_confirmation)
   end
 
+  def validate_location
+    invalid_search if params[:location].nil? || params[:location].strip == ''
+  end
+
 end
