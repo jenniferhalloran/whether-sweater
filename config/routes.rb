@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :forecast, only: [:index]
       resources :users, only: [:create]
+      post "/road_trip", to: "road_trip#show"
     end
   end
 end
