@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Api::V1::ForecastController < ApplicationController
+  include ParamsHelper
   before_action :validate_location
 
   def index
