@@ -13,7 +13,7 @@ RSpec.describe GeocodingFacade do
       expect(coordinates.longitude).to be_a(Float)
     end
   end
-  xdescribe '#get_route(origin, destination)' do
+  describe '#get_route(origin, destination)' do
     it 'returns a route object' do
       route = GeocodingFacade.get_route('Denver, CO', 'Pueblo, CO')
 
