@@ -2,6 +2,8 @@
 
 class Api::V1::UsersController < ApplicationController
   include ParamsHelper
+  before_action :downcase_email_params
+  
   def create
     user = User.create(user_params)
     if user.save

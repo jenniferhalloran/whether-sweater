@@ -7,7 +7,7 @@ describe "User Log In" do
       user.api_keys.create!(token: "testapikey")
 
       params = {
-        "email": "whatever@example.com",
+        "email": "wHAtever@example.com",
         "password": "supersecret"
       }
 
