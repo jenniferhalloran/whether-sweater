@@ -8,7 +8,11 @@ class GeocodingFacade
 
   def self.get_route(origin, destination)
     route_data = GeocodingService.get_route(origin, destination)[:route]
-    Route.new(origin, destination, route_data)
+    if route_data[:routeError][:errorCode] == 2
+      "impossible route"
+    else
+      Route.new(origin, destination, route_data)
+    end
   end
 
 end

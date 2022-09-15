@@ -70,7 +70,7 @@ RSpec.describe 'Roadtrip API' do
       expect(body["data"]["attributes"]["weather_at_eta"]).to have_key("conditions")
     end
 
-    xit 'returns an impossible route error if a route cannot be made to the destination' do
+    it 'returns an impossible route error if a route cannot be made to the destination' do
       user = User.create(email: 'whatever@example.com', password: 'supersecret')
       user.api_keys.create!(token: "jgn983hy48thw9begh98h4539h4")
 
