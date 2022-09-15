@@ -15,4 +15,14 @@ class WeatherFacade
     end
     { current_weather: current, daily_weather: daily, hourly_weather: hourly }
   end
+
+  def self.get_weather_at_eta(latitude, longitude, travel_time)
+    weather = WeatherService.get_weather(latitude, longitude)
+    if travel_time < 48
+      {temperature: weather[:hourly][travel_time][:temp], conditions: weather[:hourly][travel_time][:weather][0][:description]}
+    else
+      days = travel_time / 24
+      {temperature: weather[:daily][days][:temp][:day], conditions: weather[:daily][days][:weather][0][:description]}
+    end
+  end
 end

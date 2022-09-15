@@ -17,7 +17,7 @@ RSpec.describe GeocodingService do
   end
 
   describe '#get_route(origin, desination)' do
-    xit 'returns a routes starting geolocation, ending geolocation, and time to get there' do
+    it 'returns a routes starting geolocation, ending geolocation, and time to get there' do
       route_data = GeocodingService.get_route('Denver,CO', 'Pueblo,CO')
 
       expect(route_data).to be_a Hash
