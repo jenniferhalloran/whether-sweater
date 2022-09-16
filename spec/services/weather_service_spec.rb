@@ -37,7 +37,7 @@ RSpec.describe WeatherService do
 
       expect(weather_data[:hourly]).to be_an Array
       expect(weather_data[:hourly][0][:dt]).to be_an Integer
-      expect(weather_data[:hourly][0][:temp]).to be_an Float
+      expect(weather_data[:hourly][0][:temp]).to be_a Numeric
       expect(weather_data[:hourly][0][:weather][0]).to be_a Hash
       expect(weather_data[:hourly][0][:weather][0][:description]).to be_a String
       expect(weather_data[:hourly][0][:weather][0][:icon]).to be_a String

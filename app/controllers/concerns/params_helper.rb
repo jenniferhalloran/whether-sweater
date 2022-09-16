@@ -1,4 +1,5 @@
 module ParamsHelper 
+  include ErrorHelper
   
   def downcase_email_params
     params[:email] = user_params[:email].downcase if params[:email]
@@ -31,10 +32,6 @@ module ParamsHelper
 
   def invalid_search
     render json: ErrorSerializer.format_error(search_error), status: 400 
-  end
-
-  def search_error
-    "Invalid search, please try again."
   end
 
 end

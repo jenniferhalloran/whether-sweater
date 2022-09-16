@@ -3,7 +3,7 @@ module Api
     class RoadTripController < ApplicationController
       include ParamsHelper
       include AuthHelper
-      before_action :validate_inputs, only: [:show]
+      before_action :validate_inputs
       before_action :validate_api_key
 
       def show

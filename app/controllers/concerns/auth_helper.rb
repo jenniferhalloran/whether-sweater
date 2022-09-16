@@ -1,15 +1,13 @@
 module AuthHelper 
+  include ErrorHelper
+
   def validate_api_key
     api_key = ApiKey.find_by(token: params[:api_key])
     invalid_api_key if !api_key
   end
 
   def invalid_api_key
-    render json: ErrorSerializer.format_error(api_error), status: 401
-  end
-
-  def api_error 
-    "Invalid API key."
+    render json: ErrorSerializer.format_error(key_error), status: 401
   end
 
   def invalid_credentials(user)
@@ -25,4 +23,7 @@ module AuthHelper
     user.api_keys.first
   end
 
+  def create_key(user)
+    user.api_keys.create! token: SecureRandom.hex
+  end
 end
