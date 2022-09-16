@@ -17,7 +17,6 @@ RSpec.describe 'Roadtrip API' do
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       }
-
       post '/api/v1/road_trip', headers: headers, params: JSON.generate(params)
 
       body = JSON.parse(response.body)
@@ -51,6 +50,7 @@ RSpec.describe 'Roadtrip API' do
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       }
+  
 
       post '/api/v1/road_trip', headers: headers, params: JSON.generate(params)
 
@@ -120,7 +120,7 @@ RSpec.describe 'Roadtrip API' do
       body = JSON.parse(response.body)
 
       expect(response.status).to eq(401)
-      expect(body["error"]).to eq("Invalid API key.")
+      expect(body["data"]["error"]).to eq("Invalid API key.")
     end
   end
 end

@@ -72,7 +72,7 @@ RSpec.describe 'Forecast API' do
       body = JSON.parse(response.body, symbolize_names: true)
 
       expect(response.status).to eq 400
-      expect(body[:error]).to eq('Invalid search, please try again.')
+      expect(body[:data][:error]).to eq('Invalid search, please try again.')
     end
   end
 end

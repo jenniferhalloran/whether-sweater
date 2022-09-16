@@ -1,9 +1,11 @@
 class Api::V1::SessionsController < ApplicationController
   include ParamsHelper
+  include AuthHelper
   before_action :downcase_email_params
   
   def create
-    if authenticated 
+    user = User.find_by(email: params[:email])
+    if authenticated(user)
       render json: UserSerializer.register_user(user, api_key(user)), status: 200
     else
       render json: ErrorSerializer.format_error(error), status: 401
@@ -11,18 +13,7 @@ class Api::V1::SessionsController < ApplicationController
   end
 
 
-  private 
-  def authenticated
-    user && user.authenticate(params[:password])
-  end
-
-  def user
-    user = User.find_by(email: params[:email])
-  end
-
-  def api_key(user)
-    user.api_keys.first
-  end
+private
 
   def error
     "Those credentials are incorrect. Try again!"

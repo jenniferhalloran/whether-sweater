@@ -2,7 +2,9 @@ module Api
   module V1
     class RoadTripController < ApplicationController
       include ParamsHelper
+      include AuthHelper
       before_action :validate_inputs, only: [:show]
+      before_action :validate_api_key
 
       def show
         route = GeocodingFacade.get_route(params[:origin], params[:destination])
