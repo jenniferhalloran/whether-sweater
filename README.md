@@ -79,7 +79,7 @@
 ## Endpoints
 
 ### Retrieve Weather
-This request is made by sending a get request to "/api/v1/forecast" with a city,state string send in as a query parameter. If this is an new location search, the location string is sent to the MapQuest API to convert the string into coordinates and stored in the database. If the location has been previously searched, the coordinates are retrieved from the database. The coordinates are then sent to the OpenWeather API to retrieve the weather forecast, including current weather, 8 hours of hourly weather and 5 days of daily weather. Low-Level caching is implemented to cache the weather query. If incorrect parameters are sent through, the user will receive a descriptive error and 400 - Bad Request status.
+This endpoint takes in a city,state string as a query parameter. If this is an new location search, the location string is sent to the MapQuest API to convert the string into coordinates and stored in the database. If the location has been previously searched, the coordinates are retrieved from the database. The coordinates are then sent to the OpenWeather API to retrieve the weather forecast, including current weather, 8 hours of hourly weather and 5 days of daily weather. Low-Level caching is implemented to cache the weather query. If incorrect parameters are sent through, the user will receive a descriptive error and 400 - Bad Request status.
 #### Request:
 ```
 GET /api/v1/forecast?location=denver,co
