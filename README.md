@@ -80,7 +80,7 @@
 ## Endpoints
 
 ### Retrieve Weather
-This endpoint takes in a city,state string as a query parameter. If this is an new location search, the location string is sent to the MapQuest API to convert the string into coordinates and stored in the database. If the location has been previously searched, the coordinates are retrieved from the database. The coordinates are then sent to the OpenWeather API to retrieve the weather forecast, including current weather, 8 hours of hourly weather and 5 days of daily weather. Low-Level caching is implemented to cache the weather query. If incorrect parameters are sent through, the user will receive a descriptive error and 400 - Bad Request status.
+This endpoint takes in a city string as a query parameter. If it is a new location, it is sent to the MapQuest API to convert the city name into coordinates and then the data is stored locally in a Postgres database. If the location has been previously searched, the coordinates are retrieved from the database. The coordinates are then sent to the OpenWeather API to retrieve the weather forecast, including current weather, 8 hours of hourly weather and 5 days of daily weather. Low-Level caching is implemented to cache the weather query. If incorrect parameters are sent through the user will receive a descriptive error and 400 - Bad Request status.
 #### Request:
 ```
 GET /api/v1/forecast?location=denver,co
@@ -92,7 +92,7 @@ Accept: application/json
 ![Screen Shot 2022-08-09 at 9 46 11 AM](https://user-images.githubusercontent.com/48455658/183665343-0795ffef-7b5e-4ff4-9f6e-e7e47f6d2143.png)
 
 ### User Registration
-This endpoint takes in a user's unique email and password through the JSON payload in the body of the request. The password is processed with the BCrypt gem, which securely encrypts the password through a salt and hashing and returns a password digest. The user is also assigned an API key using the SecureRandom library. The email is downcased then the email and password digest are stored in the user table, and the API key is stored in the API keys table. Each API key is associated with a user through a one to many relationship. An unsuccessful request returns the appropriate 400 level status code and a specific error explaining the issue i.e passwords do not match, email already taken, missing field. 
+This endpoint takes in a user's unique email and password through the JSON payload in the body of the request. The password is processed with the BCrypt gem, which securely encrypts the password through a salt and hashing and returns a password digest. The user is also assigned an API key using the SecureRandom library. The email is downcased then stored with the password digest in the user table, and the API key is stored in the API keys table. Each API key is associated with a user through a one to many relationship. An unsuccessful request returns the appropriate 400 level status code and a specific error explaining the issue i.e passwords do not match, email already taken, missing field. 
 
 #### Request
 ```
