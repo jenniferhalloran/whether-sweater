@@ -10,7 +10,6 @@ class Api::V1::ForecastController < ApplicationController
       coordinates = GeocodingFacade.get_coordinates(location)
       store_location(location, coordinates)
     else
-      require 'pry'; binding.pry
       coordinates = Geolocation.find_by(location: params[:location])
     end
 
