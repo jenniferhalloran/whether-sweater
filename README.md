@@ -1,4 +1,6 @@
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/jenniferhalloran/whether-sweater/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/jenniferhalloran/whether-sweater/tree/main) If this is green, we're in good shape!
+
 <a name="readme-top"></a>
 
 <!-- PROJECT LOGO -->
@@ -15,9 +17,8 @@
     ·
     <a href="https://github.com/jenniferhalloran/whether-sweater/issues">Request Feature</a>
   </p>
+
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
