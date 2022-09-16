@@ -60,6 +60,19 @@ RSpec.describe 'Forecast API' do
         expect(forecast).to_not have_key :visibility
       end
     end
+    it 'saves the geolocation of the city given to the database and does not save it again if it exists' do
+      expect(Geolocation.all.count).to eq(0)
+      get '/api/v1/forecast?location=denver,co'
+      
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
+      expect(Geolocation.all.count).to eq(1)
+
+      get '/api/v1/forecast?location=denver,co'
+      
+      expect(Geolocation.all.count).to eq(1)
+    end 
+
   end
 
   describe 'sad path' do
