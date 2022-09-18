@@ -1,6 +1,5 @@
 require 'rails_helper'
-
-describe "User Log In" do
+RSpec.describe 'User Log In' do
   describe 'happy path' do
     it 'returns user info and a 200 status when credentials are valid' do
       user = User.create(email: 'whatever@example.com', password: 'supersecret')
