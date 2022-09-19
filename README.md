@@ -32,6 +32,7 @@
       <a href="#endpoints">Endpoints</a>
       <ul>
         <li><a href="#retrieve-weather">Retrieve Weather</a></li>
+        <li><a href="#retrieve-background-image">Background Image</a></li>
         <li><a href="#user-registration">User Registration</a></li>
         <li><a href="#login">Login</a></li>
         <li><a href="#road-trip">Road Trip</a></li>
@@ -72,6 +73,7 @@
 - [MapQuest GeoCoding](https://developer.mapquest.com/documentation/geocoding-api/)
 - [OpenWeather](https://openweathermap.org/api/one-call-api)
 - [Yelp](https://www.yelp.com/developers/documentation/v3/authentication)
+- [Unsplash](https://unsplash.com/documentation)
 
 ## Schema
 ![Screen Shot 2022-09-16 at 12 34 29 PM](https://user-images.githubusercontent.com/48455658/190687184-c4d19299-d970-40e4-a0a4-3ee89cb9d688.png)
@@ -90,6 +92,20 @@ Accept: application/json
 
 #### Sample Response:
 ![Screen Shot 2022-08-09 at 9 46 11 AM](https://user-images.githubusercontent.com/48455658/183665343-0795ffef-7b5e-4ff4-9f6e-e7e47f6d2143.png)
+
+### Retrieve Background Image
+This endpoint takes in a keyword as a query parameter. One image is then retrieved from the unsplash API based upon the keyword as well as the photographer and photographer's profile URL to allow the FE to follow Unsplash's [attribution guidelines](https://help.unsplash.com/en/articles/2511315-guideline-attribution). 
+#### Request:
+```
+GET /api/v1/images?location=denver,co
+Content-Type: application/json
+Accept: application/json
+```
+
+#### Sample Response:
+![Screen Shot 2022-09-19 at 11 10 50 AM](https://user-images.githubusercontent.com/48455658/191051192-59f07aa9-7071-4f8e-b1d8-1c5cac9d9b5f.png)
+
+
 
 ### User Registration
 This endpoint takes in a user's unique email and password through the JSON payload in the body of the request. The password is processed with the BCrypt gem, which securely encrypts the password through a salt and hashing and returns a password digest. The user is also assigned an API key using the SecureRandom library. The email is downcased then stored with the password digest in the user table, and the API key is stored in the API keys table. Each API key is associated with a user through a one to many relationship. An unsuccessful request returns the appropriate 400 level status code and a specific error explaining the issue i.e passwords do not match, email already taken, missing field. 
@@ -241,7 +257,7 @@ Don't forget to give the project a star! Thanks again!
 
 
 <!-- CONTACT -->
-##Contact
+## Contact
 
    <td align="center"><a href="https://github.com/jenniferhalloran"><img src="https://avatars.githubusercontent.com/u/48455658?v=4" width="100px;" alt=""/><br /><sub><b>Jennifer H. (she/her)</b></sub></a><br /><a href="https://www.linkedin.com/in/jenniferlhalloran/" title ="Linked In"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a></td>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
