@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       resources :users, only: [:create]
       resources :sessions, only: [:create]
       post "/road_trip", to: "road_trip#show"
+      resources :images, only: [:index]
+
     end
   end
 end
