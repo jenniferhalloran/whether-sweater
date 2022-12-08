@@ -10,7 +10,9 @@
 <h1 align="center">Whether Sweater</h3>
 
   <p align="center">
-    Whether Sweater is a service-oriented Application that exposes API endpoints for trip planning. Endpoints include querying weather forecasts for a destination and the travel time between two destinations. Multiple API endpoints are consumed for each call, with all data filtered and integrated into the JSON body of whether-sweaters's response.
+    Whether Sweater is a service-oriented Application that exposes API endpoints for trip planning. Endpoints include querying weather forecasts for a destination and the travel time between two destinations. Multiple API endpoints are consumed for each call, with all data filtered and integrated into the JSON body of whether-sweaters's response. 
+
+    Want to test it out yourself? The live deployment endpoints can be accessed through this URL: https://whether-sweater.fly.dev/
     <br />
     <br />
     <a href="https://github.com/jenniferhalloran/whether-sweater/issues">Report Bug</a>
