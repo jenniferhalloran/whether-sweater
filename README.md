@@ -1,18 +1,16 @@
-
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/jenniferhalloran/whether-sweater/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/jenniferhalloran/whether-sweater/tree/main) If this is green, we're in good shape!
-
 <a name="readme-top"></a>
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
+<img src="https://dl.circleci.com/status-badge/img/gh/jenniferhalloran/whether-sweater/tree/main.svg?style=svg"/>
+<br>If this is green, we're in good shape!<br><br>
 <img src="https://media.giphy.com/media/3HpSslnzl7mKx0Yzhi/giphy.gif" alt="sweaters" width="30%"/>
 <h1 align="center">Whether Sweater</h3>
 
   <p align="center">
     Whether Sweater is a service-oriented Application that exposes API endpoints for trip planning. Endpoints include querying weather forecasts for a destination and the travel time between two destinations. Multiple API endpoints are consumed for each call, with all data filtered and integrated into the JSON body of whether-sweaters's response. 
-
-    Want to test it out yourself? The live deployment endpoints can be accessed through this URL: https://whether-sweater.fly.dev/
+    Want to test it out yourself? The live deployment endpoints can be accessed through this URL: https://whether-sweater.fly.dev/ !
     <br />
     <br />
     <a href="https://github.com/jenniferhalloran/whether-sweater/issues">Report Bug</a>
