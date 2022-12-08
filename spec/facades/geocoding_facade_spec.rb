@@ -20,4 +20,12 @@ RSpec.describe GeocodingFacade do
       expect(route).to be_a(Route)
     end
   end
+
+  describe '#get_route(origin, destination)' do
+    it 'returns a route object' do
+      route = GeocodingFacade.get_route('Denver, CO', 'London, UK')
+
+      expect(route).to eq("impossible route")
+    end
+  end
 end
